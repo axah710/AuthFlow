@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
-import 'package:online_auth_system/features/get_started/ui/screens/onboarding_first_screen.dart';
-import 'package:online_auth_system/features/get_started/ui/screens/onboarding_second_screen.dart';
-import 'package:online_auth_system/features/get_started/ui/screens/onboarding_third_screen.dart';
+import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_first_screen.dart';
+import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_second_screen.dart';
+import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_third_screen.dart';
 import 'package:online_auth_system/features/select_role/ui/screen/select_role_screen.dart';
 
 class AppRouter {

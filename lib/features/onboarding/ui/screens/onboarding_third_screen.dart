@@ -7,10 +7,10 @@ import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/app_text_button.dart';
 import 'package:online_auth_system/core/widgets/image_displayer.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/get_started/ui/widgets/onboarding_arrow_button.dart';
+import 'package:online_auth_system/features/onboarding/ui/widgets/onboarding_arrow_button.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+class OnBoardingThirdScreen extends StatelessWidget {
+  const OnBoardingThirdScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,38 +26,52 @@ class OnBoardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 const ImageDisplayer(
-                  assetName: "assets/images/authflow1.png",
+                  assetName: "assets/images/authflow3.png",
                   height: 245,
                   width: 245,
                 ),
                 verticalSpace(30),
                 AppTextButton(
-                  buttonText: "Secret",
+                  buttonText: "Biometric",
                   textStyle: AppTextStyles.font16WhiteBold,
                   backgroundColor: AppColorsManager.red,
                   buttonHeight: 46,
-                  buttonWidth: 90,
+                  buttonWidth: 103,
                   onPressed: () {},
                 ),
                 verticalSpace(20),
                 Text(
-                  "User Secret Authentiction",
+                  "Biometric Traits Authentication",
                   style: AppTextStyles.font16BlackMedium,
                 ),
                 verticalSpace(30),
                 Text(
-                  "We prioritize your digital safety with a secure User Secret approach, ensuring passwords and PINs remain confidential, creating a robust shield for a private and protected user experience.",
+                  "Your identity is our priority. We use cutting-edge biometric authentication, such as fingerprints or facial recognition, ensuring only you can access your account. This enhances security and provides a personalized user experience.",
                   style: AppTextStyles.font14BlackRegular,
                   textAlign: TextAlign.center,
                 ),
                 verticalSpace(77),
-                GestureDetector(
-                  onTap: () {
-                    context.pushNamed(Routes.onBoardingSecondScreen);
-                  },
-                  child: const OnBoardingArrowButton(
-                    icon: Icons.arrow_forward_ios_rounded,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        context.pop();
+                      },
+                      child: const OnBoardingArrowButton(
+                        icon: Icons.arrow_back_ios_rounded,
+                      ),
+                    ),
+                    horizontalSpace(15),
+                    GestureDetector(
+                      onTap: () {
+                        context.pushNamed(Routes.selectRoleScreen);
+                      },
+                      child: const OnBoardingArrowButton(
+                        icon: Icons.arrow_forward_ios_rounded,
+                      ),
+                    ),
+                  ],
                 ),
                 verticalSpace(66),
               ],

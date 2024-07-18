@@ -7,10 +7,10 @@ import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/app_text_button.dart';
 import 'package:online_auth_system/core/widgets/image_displayer.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/get_started/ui/widgets/onboarding_arrow_button.dart';
+import 'package:online_auth_system/features/onboarding/ui/widgets/onboarding_arrow_button.dart';
 
-class OnBoardingThirdScreen extends StatelessWidget {
-  const OnBoardingThirdScreen({super.key});
+class OnBoardingSecondScreen extends StatelessWidget {
+  const OnBoardingSecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,27 +26,27 @@ class OnBoardingThirdScreen extends StatelessWidget {
             child: Column(
               children: [
                 const ImageDisplayer(
-                  assetName: "assets/images/authflow3.png",
+                  assetName: "assets/images/authflow2.png",
                   height: 245,
                   width: 245,
                 ),
                 verticalSpace(30),
                 AppTextButton(
-                  buttonText: "Biometric",
+                  buttonText: "Possesion",
                   textStyle: AppTextStyles.font16WhiteBold,
                   backgroundColor: AppColorsManager.red,
                   buttonHeight: 46,
-                  buttonWidth: 103,
+                  buttonWidth: 104,
                   onPressed: () {},
                 ),
                 verticalSpace(20),
                 Text(
-                  "Biometric Traits Authentication",
+                  "Possession Factor Authentication",
                   style: AppTextStyles.font16BlackMedium,
                 ),
                 verticalSpace(30),
                 Text(
-                  "Your identity is our priority. We use cutting-edge biometric authentication, such as fingerprints or facial recognition, ensuring only you can access your account. This enhances security and provides a personalized user experience.",
+                  "Enhancing security, we use a Possession Factor strategy, requiring a physical item like a token or mobile device for authentication. This extra layer of defense fortifies your access and ensures peace of mind.",
                   style: AppTextStyles.font14BlackRegular,
                   textAlign: TextAlign.center,
                 ),
@@ -65,7 +65,9 @@ class OnBoardingThirdScreen extends StatelessWidget {
                     horizontalSpace(15),
                     GestureDetector(
                       onTap: () {
-                        context.pushNamed(Routes.selectRoleScreen);
+                        context.pushNamed(
+                          Routes.onBoardingThirdScreen,
+                        );
                       },
                       child: const OnBoardingArrowButton(
                         icon: Icons.arrow_forward_ios_rounded,

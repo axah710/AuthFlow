@@ -9,19 +9,39 @@ class AppTextStyles {
     fontWeight: AppFontWeightHelper.bold,
     color: AppColorsManager.white,
   );
+  static TextStyle font14GreyMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColorsManager.gray,
+  );
   static TextStyle font14BlackRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: AppFontWeightHelper.regular,
     color: AppColorsManager.black,
   );
-   static TextStyle font16BlackMedium = TextStyle(
+  static TextStyle font16BlackMedium = TextStyle(
     fontSize: 16.sp,
     fontWeight: AppFontWeightHelper.medium,
     color: AppColorsManager.black,
   );
-    static TextStyle font12BlackRegular = TextStyle(
+  static TextStyle font12BlackRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: AppFontWeightHelper.regular,
+    color: AppColorsManager.black,
+  );
+  static TextStyle font24BlackBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: AppFontWeightHelper.bold,
+    color: AppColorsManager.black,
+  );
+  static TextStyle font24RedSemiBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: AppFontWeightHelper.semiBold,
+    color: AppColorsManager.red,
+  );
+  static TextStyle font16BlackExtraBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: AppFontWeightHelper.extraBold,
     color: AppColorsManager.black,
   );
 }
