@@ -5,9 +5,21 @@ import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_sec
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_third_screen.dart';
 import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
 import 'package:online_auth_system/features/select_role/ui/screen/select_role_screen.dart';
+import 'package:online_auth_system/features/signin/ui/screens/signin_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    late final String role;
+    // This line declares role as a variable that will be initialized later
+    // and can only be assigned once.
+
+    if (settings.arguments != null) {
+      role = settings.arguments as String;
+    }
+    // Condition Check: The if statement checks if settings.arguments is not null.
+    // Assignment: If the condition is true, it assigns the value of settings.
+    // arguments to role, casting it to a String. This ensures that role is only
+    // set when there is an argument passed.
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
@@ -21,14 +33,23 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingThirdScreen(),
         );
+
       case Routes.selectRoleScreen:
         return MaterialPageRoute(
           builder: (context) => const SelectRoleScreen(),
         );
-     case Routes.registerScreen:
-        final role = settings.arguments as String;
+
+      case Routes.registerScreen:
         return MaterialPageRoute(
-          builder: (context) => RegisterScreen(role: role),
+          builder: (context) => RegisterScreen(
+            role: role,
+          ),
+        );
+      case Routes.signinScreen:
+        return MaterialPageRoute(
+          builder: (context) => SigninScreen(
+            role: role,
+          ),
         );
 
       default:

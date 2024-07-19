@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236625512457",
+    "project_id": "authflow-d537c",
+    "storage_bucket": "authflow-d537c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236625512457:android:c3489e12fce90a3c5050d8",
+        "android_client_info": {
+          "package_name": "com.example.online_auth_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEP1nAEHzspJ3XkaKX1Y8RbAfC_DCYHP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

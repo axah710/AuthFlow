@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/core/widgets/svg_displayer.dart';
 
-class AlterantiveRegister extends StatelessWidget {
-  const AlterantiveRegister({super.key});
+class AlterantiveAccounts extends StatelessWidget {
+  const AlterantiveAccounts({super.key});
 
   @override
   Widget build(BuildContext context) {
