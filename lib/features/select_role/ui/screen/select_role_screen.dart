@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_auth_system/core/helpers/extinsions.dart';
+import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/features/select_role/ui/widgets/app_name_and_logo.dart';
@@ -29,13 +31,19 @@ class SelectRoleScreen extends StatelessWidget {
                     style: AppTextStyles.font24BlackBold,
                   ),
                   verticalSpace(32),
-                  const RoleCard(
+                  RoleCard(
                     role: 'Admin',
                     roleDescription:
                         "Full control over system settings and user management.",
+                    onTap: () {
+                      context.pushNamed(Routes.registerScreen, arguments: 'Admin');
+                    },
                   ),
                   verticalSpace(16),
-                  const RoleCard(
+                  RoleCard(
+                    onTap: () {
+                      context.pushNamed(Routes.registerScreen, arguments: 'User');
+                    },
                     role: 'User',
                     roleDescription:
                         "Access to essential app features and limited system settings.",

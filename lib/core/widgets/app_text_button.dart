@@ -36,50 +36,62 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: ButtonStyle(
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              borderRadius ?? 10.0.r,
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.red.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextButton(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                borderRadius ?? 10.0.r,
+              ),
             ),
           ),
-        ),
-        // shape: WidgetStateProperty.all<RoundedRectangleBorder>(...): Sets the
-        // shape of the button to a rounded rectangle with a border radius. If
-        //borderRadius is not provided, it defaults to 16.0.r.
-        backgroundColor: WidgetStatePropertyAll(
-          backgroundColor ?? AppColorsManager.primaryBlueColor,
-        ),
-        // backgroundColor: WidgetStatePropertyAll(...): Sets the background
-        //color of the button. If backgroundColor is not provided, it defaults
-        // to AppColorsManager.primaryBlueColor.
-        padding: WidgetStateProperty.all<EdgeInsets>(
-          EdgeInsets.symmetric(
-            horizontal: horizontalPadding?.w ?? 12.w,
-            vertical: verticalPadding?.h ?? 14.h,
+          // shape: WidgetStateProperty.all<RoundedRectangleBorder>(...): Sets the
+          // shape of the button to a rounded rectangle with a border radius. If
+          //borderRadius is not provided, it defaults to 16.0.r.
+          backgroundColor: WidgetStatePropertyAll(
+            backgroundColor ?? AppColorsManager.white,
           ),
-          // padding: WidgetStateProperty.all<EdgeInsets>(...): Sets the padding
-          //inside the button. If horizontalPadding or verticalPadding are not
-          // provided, they default to 12.w and 14.h respectively.
-        ),
-        fixedSize: WidgetStateProperty.all(
-          Size(
-            buttonWidth?.w ?? double.maxFinite,
-            buttonHeight?.h ?? 50.h,
+          // backgroundColor: WidgetStatePropertyAll(...): Sets the background
+          //color of the button. If backgroundColor is not provided, it defaults
+          // to AppColorsManager.primaryBlueColor.
+          padding: WidgetStateProperty.all<EdgeInsets>(
+            EdgeInsets.symmetric(
+              horizontal: horizontalPadding?.w ?? 12.w,
+              vertical: verticalPadding?.h ?? 14.h,
+            ),
+            // padding: WidgetStateProperty.all<EdgeInsets>(...): Sets the padding
+            //inside the button. If horizontalPadding or verticalPadding are not
+            // provided, they default to 12.w and 14.h respectively.
           ),
+          fixedSize: WidgetStateProperty.all(
+            Size(
+              buttonWidth?.w ?? double.maxFinite,
+              buttonHeight?.h ?? 50.h,
+            ),
+          ),
+          // fixedSize: WidgetStateProperty.all(...): Sets the fixed size of the
+          //button. If buttonWidth or buttonHeight are not provided, they default
+          //to double.maxFinite and 50.h respectively.
         ),
-        // fixedSize: WidgetStateProperty.all(...): Sets the fixed size of the
-        //button. If buttonWidth or buttonHeight are not provided, they default
-        //to double.maxFinite and 50.h respectively.
-      ),
-      onPressed: onPressed,
-      // onPressed: onPressed: Sets the callback function to be executed when
-      // the button is pressed.
-      child: Text(
-        buttonText,
-        style: textStyle,
-        textAlign: TextAlign.center,
+        onPressed: onPressed,
+        // onPressed: onPressed: Sets the callback function to be executed when
+        // the button is pressed.
+        child: Text(
+          buttonText,
+          style: textStyle,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

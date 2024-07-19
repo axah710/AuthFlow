@@ -9,10 +9,17 @@ class AppTextStyles {
     fontWeight: AppFontWeightHelper.bold,
     color: AppColorsManager.white,
   );
+  static TextStyle font24BlackMedium = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColorsManager.black,
+  );
+
   static TextStyle font14GreyMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: AppFontWeightHelper.medium,
     color: AppColorsManager.gray,
+    
   );
   static TextStyle font14BlackRegular = TextStyle(
     fontSize: 14.sp,
@@ -43,6 +50,11 @@ class AppTextStyles {
     fontSize: 16.sp,
     fontWeight: AppFontWeightHelper.extraBold,
     color: AppColorsManager.black,
+  );
+   static TextStyle font16RedMedium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColorsManager.red,
   );
 }
 // The code snippet defines a class AppTextStyles containing multiple static

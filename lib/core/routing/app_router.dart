@@ -3,6 +3,7 @@ import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_first_screen.dart';
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_second_screen.dart';
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_third_screen.dart';
+import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
 import 'package:online_auth_system/features/select_role/ui/screen/select_role_screen.dart';
 
 class AppRouter {
@@ -23,6 +24,11 @@ class AppRouter {
       case Routes.selectRoleScreen:
         return MaterialPageRoute(
           builder: (context) => const SelectRoleScreen(),
+        );
+     case Routes.registerScreen:
+        final role = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (context) => RegisterScreen(role: role),
         );
 
       default:
