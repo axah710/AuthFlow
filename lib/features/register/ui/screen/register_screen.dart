@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_auth_system/core/helpers/extinsions.dart';
+import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/app_text_button.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
@@ -43,7 +45,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       AppTextButton(
                         buttonText: "Register",
                         textStyle: AppTextStyles.font16BlackMedium,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushNamed(Routes.userDashboard);
+                        }, shadowColor: Colors.red.withOpacity(0.5),
                       ),
                       verticalSpace(30),
                       const Text("or register with"),

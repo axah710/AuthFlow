@@ -17,7 +17,7 @@ class AppIconAndSigninText extends StatelessWidget {
         ),
         verticalSpace(35),
         Text(
-          "Register",
+          "Signin",
           style: AppTextStyles.font24BlackMedium,
         ),
       ],

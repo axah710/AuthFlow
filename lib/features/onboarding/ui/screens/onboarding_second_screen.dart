@@ -32,6 +32,7 @@ class OnBoardingSecondScreen extends StatelessWidget {
                 ),
                 verticalSpace(30),
                 AppTextButton(
+                  shadowColor: Colors.red.withOpacity(0.5),
                   buttonText: "Possesion",
                   textStyle: AppTextStyles.font16WhiteBold,
                   backgroundColor: AppColorsManager.red,

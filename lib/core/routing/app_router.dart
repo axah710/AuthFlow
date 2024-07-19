@@ -6,6 +6,9 @@ import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_thi
 import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
 import 'package:online_auth_system/features/select_role/ui/screen/select_role_screen.dart';
 import 'package:online_auth_system/features/signin/ui/screens/signin_screen.dart';
+import 'package:online_auth_system/features/user_dashboard/ui/screen/user_dashboard.dart';
+
+import '../../features/user_account/ui/screens/user_account.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -50,6 +53,14 @@ class AppRouter {
           builder: (context) => SigninScreen(
             role: role,
           ),
+        );
+      case Routes.userDashboard:
+        return MaterialPageRoute(
+          builder: (context) => const UserDashboard(),
+        );
+ case Routes.userAccount:
+        return MaterialPageRoute(
+          builder: (context) => const UserAccount(),
         );
 
       default:

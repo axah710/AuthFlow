@@ -21,6 +21,7 @@ class AppTextButton extends StatelessWidget {
   // Required text style for the button text.
   final VoidCallback onPressed;
   // Required callback function to be executed when the button is pressed.
+  final Color? shadowColor;
   const AppTextButton({
     super.key,
     this.borderRadius,
@@ -32,6 +33,7 @@ class AppTextButton extends StatelessWidget {
     required this.buttonText,
     required this.textStyle,
     required this.onPressed,
+    this.shadowColor,
   });
 
   @override
@@ -40,7 +42,7 @@ class AppTextButton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.red.withOpacity(0.5),
+            color: shadowColor ?? Colors.white,
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

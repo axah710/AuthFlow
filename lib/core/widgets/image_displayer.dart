@@ -5,16 +5,18 @@ class ImageDisplayer extends StatelessWidget {
   final String assetName;
   final double? height;
   final double? width;
+  final BoxFit? fit;
   const ImageDisplayer({
     super.key,
     required this.assetName,
     this.height,
-    this.width,
+    this.width, this.fit,
   });
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
+      fit: fit,
       assetName,
       height: height?.h ?? 365.h,
       width: width?.h ?? 325.w,
