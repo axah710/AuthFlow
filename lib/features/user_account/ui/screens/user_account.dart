@@ -8,7 +8,9 @@ import 'package:online_auth_system/features/user_account/ui/widgets/user_account
 import 'package:online_auth_system/features/user_account/ui/widgets/user_account_image_and_email_and_name.dart';
 
 class UserAccount extends StatelessWidget {
-  const UserAccount({super.key});
+  final String role;
+
+  const UserAccount({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,9 @@ class UserAccount extends StatelessWidget {
                 verticalSpace(30),
                 const UserAccountImageAndEmailAndName(),
                 verticalSpace(39),
-                const UserAccountForm(),
+                UserAccountForm(
+                  role: role,
+                ),
                 verticalSpace(72),
                 AppTextButton(
                   buttonText: "Update Profile",

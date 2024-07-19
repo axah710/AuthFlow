@@ -5,13 +5,15 @@ import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 
 class UserDashboardListTiles extends StatelessWidget {
-  const UserDashboardListTiles({super.key});
+    final String role;
+
+  const UserDashboardListTiles({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [GestureDetector(
                   onTap: () {
-                    context.pushNamed(Routes.userAccount);
+                    context.pushNamed(Routes.userAccount, arguments: role);
                   },
                   child:  ListTile(
                     leading: const Icon(Icons.person),

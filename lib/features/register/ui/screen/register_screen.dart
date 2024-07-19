@@ -46,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         buttonText: "Register",
                         textStyle: AppTextStyles.font16BlackMedium,
                         onPressed: () {
-                          context.pushNamed(Routes.userDashboard);
+                          context.pushNamed(Routes.userDashboard , arguments: widget.role);
                         }, shadowColor: Colors.red.withOpacity(0.5),
                       ),
                       verticalSpace(30),

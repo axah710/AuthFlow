@@ -4,7 +4,9 @@ import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/core/widgets/text_form_field.dart';
 
 class UserAccountForm extends StatelessWidget {
-  const UserAccountForm({super.key});
+    final String role;
+
+  const UserAccountForm({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class UserAccountForm extends StatelessWidget {
         ),
         verticalSpace(16),
         AppTextFormField(
-          hintText: "User",
+          hintText: role,
           hintStyle: AppTextStyles.font18BlackRegular,
         ),
       ],

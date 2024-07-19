@@ -5,7 +5,9 @@ import 'package:online_auth_system/features/user_dashboard/ui/widgets/user_dashb
 import 'package:online_auth_system/features/user_dashboard/ui/widgets/user_dashboard_image_and_user_email_and_name.dart';
 
 class UserDashboard extends StatelessWidget {
-  const UserDashboard({super.key});
+  final String role;
+
+  const UserDashboard({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class UserDashboard extends StatelessWidget {
                 verticalSpace(30),
                 const UserDashboardImageAndUserEmailAndName(),
                 verticalSpace(48),
-                const UserDashboardListTiles(),
+                UserDashboardListTiles(
+                  role: role,
+                ),
               ],
             ),
           ),

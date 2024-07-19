@@ -56,11 +56,13 @@ class AppRouter {
         );
       case Routes.userDashboard:
         return MaterialPageRoute(
-          builder: (context) => const UserDashboard(),
+          builder: (context) =>  UserDashboard(role: role,),
         );
- case Routes.userAccount:
+      case Routes.userAccount:
         return MaterialPageRoute(
-          builder: (context) => const UserAccount(),
+          builder: (context) => UserAccount(
+            role: role ,
+          ),
         );
 
       default:
