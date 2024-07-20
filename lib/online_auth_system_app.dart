@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_auth_system/core/routing/app_router.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_colors.dart';
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_first_screen.dart';
+import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
 
 class OnlineAuthSystem extends StatelessWidget {
   final AppRouter appRouter;
@@ -21,16 +23,19 @@ class OnlineAuthSystem extends StatelessWidget {
         // ensures that text scales according to the screen size.
         splitScreenMode: true,
         //  allows the app to handle split-screen mode effectively.
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Online Auth System',
-          theme: ThemeData(
-            primaryColor: AppColorsManager.primaryBlueColor,
-            scaffoldBackgroundColor: Colors.white,
+        child: BlocProvider(
+          create: (context) => AuthCubit(role: 'user'),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Online Auth System',
+            theme: ThemeData(
+              primaryColor: AppColorsManager.primaryBlueColor,
+              scaffoldBackgroundColor: Colors.white,
+            ),
+            initialRoute: Routes.onBoardingScreen,
+            onGenerateRoute: appRouter.generateRoute,
+            home: const OnBoardingScreen(),
           ),
-          initialRoute: Routes.onBoardingScreen,
-          onGenerateRoute: appRouter.generateRoute,
-          home: const OnBoardingScreen(),
         ));
   }
 }

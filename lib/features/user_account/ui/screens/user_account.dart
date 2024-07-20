@@ -5,7 +5,6 @@ import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/app_text_button.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/features/user_account/ui/widgets/user_account_form.dart';
-import 'package:online_auth_system/features/user_account/ui/widgets/user_account_image_and_email_and_name.dart';
 
 class UserAccount extends StatelessWidget {
   final String role;
@@ -14,6 +13,7 @@ class UserAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -21,9 +21,7 @@ class UserAccount extends StatelessWidget {
             padding: EdgeInsets.only(right: 15.w, left: 15.w),
             child: Column(
               children: [
-                verticalSpace(30),
-                const UserAccountImageAndEmailAndName(),
-                verticalSpace(39),
+                verticalSpace(55),
                 UserAccountForm(
                   role: role,
                 ),

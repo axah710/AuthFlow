@@ -6,8 +6,8 @@ class Routes {
   static const String registerScreen = "/registerScreen";
   static const String signinScreen = "/signinScreen";
   static const String userDashboard = "/userDashboard";
-    static const String userAccount = "/userAccount";
-
+  static const String userAccount = "/userAccount";
+  static const String adminDashboard = "/adminDashboard";
 }
 // The provided Dart code snippet defines a class named Routes that contains
 // static constant string variables such as: onBoardingScreen and loginScreen.
