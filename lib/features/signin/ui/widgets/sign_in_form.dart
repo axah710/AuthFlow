@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_auth_system/core/helpers/app_regex.dart';
 import 'package:online_auth_system/core/helpers/extinsions.dart';
+import 'package:online_auth_system/core/helpers/showsnackbarmessage.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/app_text_button.dart';
@@ -100,28 +101,44 @@ class _SigninFormState extends State<SigninForm> {
 
   Future<void> validateThenDoSignin(BuildContext context) async {
     if (context.read<AuthCubit>().loginFormKey.currentState!.validate()) {
+      // Attempt to sign in the user
       User? user = await context.read<AuthCubit>().signInWithEmail(
             context.read<AuthCubit>().emailController.text,
             context.read<AuthCubit>().passwordController.text,
           );
 
       if (user != null) {
-        // Retrieve user data from Firestore
-        DocumentSnapshot userData = await _firestoreService.getUser(user.uid);
-        String role = userData['role'];
+        try {
+          // Retrieve user data from Firestore
+          DocumentSnapshot userData = await _firestoreService.getUser(user.uid);
+          String role = userData['role'];
 
-        if (role == 'admin'&& context.mounted) {
-          context.pushReplacementNamed(
-            Routes.adminDashboard,
-            arguments: {'role': role, 'userId': user.uid},
-          );
-        } else {
+          if (role == 'Admin') {
+            // Navigate to Admin Dashboard
+            if (context.mounted) {
+              context.pushReplacementNamed(
+                Routes.adminDashboard,
+                arguments: {'role': role, 'userId': user.uid},
+              );
+            }
+          } else {
+            // Navigate to User Dashboard
+            if (context.mounted) {
+              context.pushReplacementNamed(
+                Routes.userDashboard,
+                arguments: user.uid,
+              );
+            }
+          }
+        } catch (e) {
           if (context.mounted) {
-  context.pushReplacementNamed(
-    Routes.userDashboard,
-    arguments: user.uid,
-  );
-}
+            showSnackBarMessage(context, 'Error fetching user data: $e');
+          }
+        }
+      } else {
+        if (context.mounted) {
+          showSnackBarMessage(
+              context, 'Sign in failed. Please check your credentials.');
         }
       }
     }

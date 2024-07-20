@@ -11,6 +11,8 @@ import 'package:online_auth_system/features/register/ui/widgets/already_have_an_
 import 'package:online_auth_system/features/register/ui/widgets/alterantive_accounts.dart';
 import 'package:online_auth_system/features/register/ui/widgets/app_icon_and_register_text.dart';
 import 'package:online_auth_system/features/register/ui/widgets/register_form.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   final String role;
@@ -26,22 +28,55 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool isLoading = false;
+  final FirestoreService _firestoreService = FirestoreService();
+
+  Future<void> handleSignup(BuildContext context, User user) async {
+    try {
+      // Retrieve user data from Firestore
+      DocumentSnapshot userData = await _firestoreService.getUser(user.uid);
+      String role = userData['role'];
+
+      if (role == 'Admin') {
+        // Navigate to Admin Dashboard
+        if (context.mounted) {
+          context.pushReplacementNamed(
+            Routes.adminDashboard,
+            arguments: {'role': role, 'userId': user.uid},
+          );
+        }
+      } else {
+        // Navigate to User Dashboard
+        if (context.mounted) {
+          context.pushReplacementNamed(
+            Routes.userDashboard,
+            arguments: user.uid,
+          );
+        }
+      }
+    } catch (e) {
+      showSnackBarMessage(context, 'Error fetching user data: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignupLoadingState) {
-          isLoading = true;
+          setState(() {
+            isLoading = true;
+          });
         } else if (state is SignupSucessState) {
-          isLoading = false;
+          setState(() {
+            isLoading = false;
+          });
           showSnackBarMessage(context, state.sucessMessage);
-          context.pushReplacementNamed(
-            Routes.userDashboard,
-            arguments: state.role,
-            
-          );
+          // Handle navigation based on the role
+          handleSignup(context, state.user);
         } else if (state is SignupFailureState) {
-          isLoading = false;
+          setState(() {
+            isLoading = false;
+          });
           showSnackBarMessage(context, state.errorMessage);
         }
       },
@@ -85,5 +120,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
         );
       },
     );
+  }
+}
+
+class FirestoreService {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Future<DocumentSnapshot> getUser(String uid) async {
+    return await _firestore.collection('users').doc(uid).get();
   }
 }

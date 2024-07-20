@@ -35,8 +35,10 @@ class AuthCubit extends Cubit<AuthState> {
         });
         emit(
           SignupSucessState(
-              sucessMessage: 'The account has been created successfully.',
-              role: role),
+            user: result.user!,
+            sucessMessage: 'The account has been created successfully.',
+            role: role,
+          ),
         );
         return user;
       }

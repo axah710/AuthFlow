@@ -45,8 +45,9 @@ final class SignupInitial extends AuthState {}
 final class SignupSucessState extends AuthState {
   final String sucessMessage;
   final String role;
+   final User user;
 
-  SignupSucessState( {required this.role,required this.sucessMessage});
+  SignupSucessState( {required this.user,required this.role,required this.sucessMessage});
 }
 
 final class SignupLoadingState extends AuthState {}

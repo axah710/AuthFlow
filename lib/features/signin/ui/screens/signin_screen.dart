@@ -1,3 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +11,7 @@ import 'package:online_auth_system/core/helpers/showsnackbarmessage.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
+import 'package:online_auth_system/features/register/data/firestore_service.dart';
 import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
 import 'package:online_auth_system/features/register/ui/widgets/alterantive_accounts.dart';
 import 'package:online_auth_system/features/signin/ui/widgets/app_icon_and_signin_text.dart';
@@ -22,20 +27,63 @@ class SigninScreen extends StatefulWidget {
 
 class _SigninScreenState extends State<SigninScreen> {
   bool isLoading = false;
+  final FirestoreService _firestoreService = FirestoreService();
+
+  Future<void> validateThenDoSignin(BuildContext context) async {
+    if (context.read<AuthCubit>().loginFormKey.currentState!.validate()) {
+      User? user = await context.read<AuthCubit>().signInWithEmail(
+            context.read<AuthCubit>().emailController.text,
+            context.read<AuthCubit>().passwordController.text,
+          );
+
+      if (user != null) {
+        try {
+          // Retrieve user data from Firestore
+          DocumentSnapshot userData = await _firestoreService.getUser(user.uid);
+          String role = userData['role'];
+
+          if (role == 'Admin') {
+            // Navigate to Admin Dashboard
+            if (context.mounted) {
+              context.pushReplacementNamed(
+                Routes.adminDashboard,
+                arguments: {'role': role, 'userId': user.uid},
+              );
+            }
+          } else {
+            // Navigate to User Dashboard
+
+            context.pushReplacementNamed(
+              Routes.userDashboard,
+              arguments: user.uid,
+            );
+          }
+        } catch (e) {
+          showSnackBarMessage(context, 'Error fetching user data');
+        }
+      } else {
+        showSnackBarMessage(
+            context, 'Sign in failed. Please check your credentials.');
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
       if (state is LoginLoadingState) {
-        isLoading = true;
+        setState(() {
+          isLoading = true;
+        });
       } else if (state is LoginSucessState) {
-        isLoading = false;
-        context.pushReplacementNamed(
-          Routes.userDashboard,
-          arguments: state.user,
-        );
+        setState(() {
+          isLoading = false;
+        });
+        validateThenDoSignin(context); // Call your method here
       } else if (state is LoginFailureState) {
-        isLoading = false;
+        setState(() {
+          isLoading = false;
+        });
         showSnackBarMessage(context, state.errorMessage);
       }
     }, builder: (context, state) {

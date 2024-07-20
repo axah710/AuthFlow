@@ -72,7 +72,6 @@ class AppRouter {
       case Routes.adminDashboard:
         return MaterialPageRoute(
           builder: (context) => AdminDashboard(
-            role: role,
           ),
         );
 
