@@ -1,10 +1,11 @@
-# online_auth_system
-
 # AuthFlow
 
 ![License](https://img.shields.io/github/license/axah710/AuthFlow)
 ![Last Commit](https://img.shields.io/github/last-commit/axah710/AuthFlow)
 ![Open Issues](https://img.shields.io/github/issues/axah710/AuthFlow)
+![Stars](https://img.shields.io/github/stars/axah710/AuthFlow)
+![Forks](https://img.shields.io/github/forks/axah710/AuthFlow)
+![Contributors](https://img.shields.io/github/contributors/axah710/AuthFlow)
 
 AuthFlow is a comprehensive authentication management system built with Firebase, providing user authentication, role-based routing, and a dynamic admin dashboard.
 
@@ -21,6 +22,26 @@ AuthFlow is a comprehensive authentication management system built with Firebase
 - **Onboarding**: 
   - Renamed `get_started` to `onboarding`.
   - Introduced `select_role` feature and related UI components.
+
+### Detailed Features
+- **Authentication with AuthCubit**:
+  - Integrated Firebase authentication with `AuthCubit` for user management.
+  - Added functionality to support user login and registration.
+  - Developed an admin dashboard to add and delete users.
+  - Improved overall authentication flow and error handling.
+
+- **Role-based Routing and Dashboard**:
+  - Enhanced user dashboard and account functionality with role-based routing.
+  - Updated app router to pass role as argument to user dashboard and account.
+
+- **Onboarding and Select Role**:
+  - Renamed `get_started` to `onboarding`.
+  - Added `select_role` feature in the onboarding module.
+  - Refactored UI for the onboarding process.
+
+- **Onboarding Screens and Core Widgets**:
+  - Added onboarding screens to guide users through initial app setup.
+  - Introduced new widgets such as Image displayer, Text form field, Spacing widget, and SVG displayer.
 
 ## Installation
 
@@ -45,32 +66,9 @@ AuthFlow is a comprehensive authentication management system built with Firebase
     flutter run
     ```
 
-## Commit History
-
-### Commits on Jul 20, 2024
-- **feat(core, AuthCubit): implement AuthCubit with Firebase for authentication**
-  - Integrated Firebase authentication with `AuthCubit` for user management.
-  - Added functionality to support user login and registration.
-  - Developed an admin dashboard to add and delete users.
-  - Improved overall authentication flow and error handling.
-  
-### Commits on Jul 19, 2024
-- **feat(routing, core): role-based routing and updates for user dashboard and account**
-  - Enhanced user dashboard and account functionality with role-based routing.
-  - Updated app router to pass role as argument to user dashboard and account.
-
-### Commits on Jul 18, 2024
-- **feat(core, onboarding, select_role): major updates and feature additions**
-  - Renamed `get_started` to `onboarding`.
-  - Added `select_role` feature in the onboarding module.
-  - Refactored UI for the onboarding process.
-
-### Commits on Jul 17, 2024
-- **feat(core, get_started): add onboarding screens and core widgets**
-  - Added onboarding screens to guide users through initial app setup.
-  - Introduced new widgets such as Image displayer, Text form field, Spacing widget, and SVG displayer.
-
 ## Contributing
+
+![Pull Requests Welcome](https://img.shields.io/badge/Pull%20Requests-Welcome-brightgreen)
 
 Contributions are welcome! Please follow these steps to contribute:
 
@@ -82,9 +80,13 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## License
 
+![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
+
+![GitHub Issues](https://img.shields.io/github/issues-raw/axah710/AuthFlow)
 
 For any inquiries or issues, please open an issue on GitHub or contact the project maintainers.
 
