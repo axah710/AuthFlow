@@ -1,6 +1,5 @@
 # AuthFlow
 
-![License](https://img.shields.io/github/license/axah710/AuthFlow)
 ![Last Commit](https://img.shields.io/github/last-commit/axah710/AuthFlow)
 ![Open Issues](https://img.shields.io/github/issues/axah710/AuthFlow)
 ![Stars](https://img.shields.io/github/stars/axah710/AuthFlow)
