@@ -20,7 +20,6 @@ AuthFlow is a comprehensive authentication management system built with Firebase
 - **Sign-in Screen**: Email/password authentication with alternative login methods.
 - **Register Screen**: Enhanced with new widgets and alternative login options for a better user experience.
 - **Onboarding**: 
-  - Renamed `get_started` to `onboarding`.
   - Introduced `select_role` feature and related UI components.
 
 ### Detailed Features
