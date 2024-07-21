@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_auth_system/core/routing/app_router.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_colors.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_first_screen.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
 
 class OnlineAuthSystem extends StatelessWidget {
   final AppRouter appRouter;

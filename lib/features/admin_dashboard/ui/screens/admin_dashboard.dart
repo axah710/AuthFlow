@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:online_auth_system/features/register/data/firestore_service.dart';
+import 'package:online_auth_system/features/auth/data/firestore_service.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});

@@ -6,10 +6,11 @@ import 'package:online_auth_system/core/helpers/extinsions.dart';
 import 'package:online_auth_system/core/helpers/showsnackbarmessage.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
-import 'package:online_auth_system/features/register/ui/widgets/already_have_an_account.dart';
-import 'package:online_auth_system/features/register/ui/widgets/alterantive_accounts.dart';
-import 'package:online_auth_system/features/register/ui/widgets/app_icon_and_register_text.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/register/ui/widgets/already_have_an_account.dart';
+import 'package:online_auth_system/features/auth/register/ui/widgets/alterantive_accounts.dart';
+import 'package:online_auth_system/features/auth/register/ui/widgets/app_icon_and_register_text.dart';
+
 import 'package:online_auth_system/features/register/ui/widgets/register_form.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

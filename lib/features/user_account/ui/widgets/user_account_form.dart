@@ -4,7 +4,7 @@ import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/role_text_form_field.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/core/widgets/text_form_field.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
 
 class UserAccountForm extends StatelessWidget {
   final String role;

@@ -11,11 +11,12 @@ import 'package:online_auth_system/core/helpers/showsnackbarmessage.dart';
 import 'package:online_auth_system/core/routing/routes.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/register/data/firestore_service.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
-import 'package:online_auth_system/features/register/ui/widgets/alterantive_accounts.dart';
-import 'package:online_auth_system/features/signin/ui/widgets/app_icon_and_signin_text.dart';
-import 'package:online_auth_system/features/signin/ui/widgets/sign_in_form.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/register/ui/widgets/alterantive_accounts.dart';
+
+import 'package:online_auth_system/features/auth/signin/ui/widgets/app_icon_and_signin_text.dart';
+import 'package:online_auth_system/features/auth/signin/ui/widgets/sign_in_form.dart';
+import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
 
 class SigninScreen extends StatefulWidget {
   final String role;

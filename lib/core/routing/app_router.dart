@@ -6,7 +6,7 @@ import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_sec
 import 'package:online_auth_system/features/onboarding/ui/screens/onboarding_third_screen.dart';
 import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
 import 'package:online_auth_system/features/select_role/ui/screen/select_role_screen.dart';
-import 'package:online_auth_system/features/signin/ui/screens/signin_screen.dart';
+import 'package:online_auth_system/features/auth/signin/ui/screens/signin_screen.dart';
 import 'package:online_auth_system/features/user_dashboard/ui/screen/user_dashboard.dart';
 import '../../features/user_account/ui/screens/user_account.dart';
 

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/register/data/firestore_service.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
+
 import 'package:online_auth_system/features/user_dashboard/ui/widgets/user_dashboard_list_tiles.dart';
 
 class UserDashboard extends StatefulWidget {

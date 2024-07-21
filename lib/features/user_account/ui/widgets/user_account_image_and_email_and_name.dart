@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_auth_system/core/theming/app_fonts.dart';
 import 'package:online_auth_system/core/widgets/image_displayer.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
 
 class UserAccountImageAndEmailAndName extends StatelessWidget {
   final String role;

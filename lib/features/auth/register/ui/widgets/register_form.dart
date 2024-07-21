@@ -7,8 +7,9 @@ import 'package:online_auth_system/core/widgets/app_text_button.dart';
 import 'package:online_auth_system/core/widgets/role_text_form_field.dart';
 import 'package:online_auth_system/core/widgets/spacing.dart';
 import 'package:online_auth_system/core/widgets/text_form_field.dart';
-import 'package:online_auth_system/features/register/data/firestore_service.dart';
-import 'package:online_auth_system/features/register/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:online_auth_system/features/register/ui/screen/register_screen.dart';
+
 
 class RegisterForm extends StatefulWidget {
   final String role;
