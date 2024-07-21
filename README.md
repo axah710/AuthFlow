@@ -90,6 +90,6 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ![GitHub Issues](https://img.shields.io/github/issues-raw/axah710/AuthFlow)
 
-For any inquiries or issues, please open an issue on GitHub or contact the project maintainers.
+For any inquiries or issues, please open an issue on GitHub or contact me.
 
-```
+
