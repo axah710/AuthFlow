@@ -8,47 +8,47 @@
 
 AuthFlow is a comprehensive authentication management system built with Firebase, providing user authentication, role-based routing, and a dynamic admin dashboard.
 
-## Features 🛠️
+## Features
 
 ### Core Features
-- **Authentication**: Integrated Firebase authentication with `AuthCubit` for user management, supporting login, registration, and error handling. 🔐
-- **Admin Dashboard**: Admin functionalities to add and delete users. 🖥️
-- **Role-based Routing**: Enhanced user dashboard and account functionality with role-based routing. 🚦
+- 🔐 **Authentication**: Integrated Firebase authentication with `AuthCubit` for user management, supporting login, registration, and error handling.
+- 🖥️ **Admin Dashboard**: Admin functionalities to add and delete users.
+- 🚦 **Role-based Routing**: Enhanced user dashboard and account functionality with role-based routing.
 
 ### Screens and Widgets
-- **Sign-in Screen**: Email/password authentication with alternative login methods. ✉️
-- **Register Screen**: Enhanced with new widgets and alternative login options for a better user experience. 📝
-- **Onboarding**: 
-  - Introduced `select_role` feature and related UI components. 🧩
+- ✉️ **Sign-in Screen**: Email/password authentication with alternative login methods.
+- 📝 **Register Screen**: Enhanced with new widgets and alternative login options for a better user experience.
+- 🧩 **Onboarding**: 
+  - Introduced `select_role` feature and related UI components.
 
 ### Detailed Features
-- **Authentication with AuthCubit**:
-  - Integrated Firebase authentication with `AuthCubit` for user management. 🔑
-  - Added functionality to support user login and registration. 📋
-  - Developed an admin dashboard to add and delete users. 🛠️
+- 🔑 **Authentication with AuthCubit**:
+  - Integrated Firebase authentication with `AuthCubit` for user management.
+  - 📋 Added functionality to support user login and registration.
+  - 🛠️ Developed an admin dashboard to add and delete users.
 
-- **Role-based Routing and Dashboard**:
-  - Enhanced user dashboard and account functionality with role-based routing. 🚀
-  - Updated app router to pass role as argument to user dashboard and account. 🔄
+- 🚀 **Role-based Routing and Dashboard**:
+  - Enhanced user dashboard and account functionality with role-based routing.
+  - 🔄 Updated app router to pass role as argument to user dashboard and account.
 
-- **Onboarding and Select Role**:
-  - Added `select_role` feature in the onboarding module. 🎭
+- 🎭 **Onboarding and Select Role**:
+  - Added `select_role` feature in the onboarding module.
 
-- **Onboarding Screens and Core Widgets**:
-  - Added onboarding screens to guide users through initial app setup. 📚
-  - Introduced new widgets such as Image displayer, Text form field, Spacing widget, and SVG displayer. 🖼️✏️⚖️📦
+- 📚 **Onboarding Screens and Core Widgets**:
+  - Added onboarding screens to guide users through initial app setup.
+  - 🖼️ Introduced new widgets such as Image displayer, Text form field, Spacing widget, and SVG displayer.
 
-## Business Cases and Impact 📈
+## Business Cases and Impact
 
 ### Business Cases
-- **Improved User Management**: With the integration of Firebase and `AuthCubit`, AuthFlow simplifies user management, enhancing the efficiency of authentication processes. 🛠️
-- **Enhanced Security**: Role-based routing ensures that users only access information pertinent to their role, improving overall application security. 🔒
-- **Scalable Admin Controls**: The admin dashboard allows for easy user management, scalable for businesses of any size. 📊
+- 🛠️ **Improved User Management**: With the integration of Firebase and `AuthCubit`, AuthFlow simplifies user management, enhancing the efficiency of authentication processes.
+- 🔒 **Enhanced Security**: Role-based routing ensures that users only access information pertinent to their role, improving overall application security.
+- 📊 **Scalable Admin Controls**: The admin dashboard allows for easy user management, scalable for businesses of any size.
 
 ### Impact
-- **User Experience**: By providing a seamless onboarding process and multiple authentication methods, user satisfaction and retention are likely to improve. 😊
-- **Development Efficiency**: Developers can leverage pre-built authentication and routing functionalities, reducing development time and focusing on core business logic. ⏳
-- **Business Growth**: Enhanced security and efficient user management can lead to better compliance with regulations and improved trust with users, supporting business growth. 🌱
+- 😊 **User Experience**: By providing a seamless onboarding process and multiple authentication methods, user satisfaction and retention are likely to improve.
+- ⏳ **Development Efficiency**: Developers can leverage pre-built authentication and routing functionalities, reducing development time and focusing on core business logic.
+- 🌱 **Business Growth**: Enhanced security and efficient user management can lead to better compliance with regulations and improved trust with users, supporting business growth.
 
 ## Installation 🚀
 
@@ -79,11 +79,11 @@ AuthFlow is a comprehensive authentication management system built with Firebase
 
 Contributions are welcome! Please follow these steps to contribute:
 
-1. Fork the repository. 🍴
-2. Create a new branch (`git checkout -b feature/your-feature-name`). 🚧
-3. Commit your changes (`git commit -am 'Add some feature'`). 📝
-4. Push to the branch (`git push origin feature/your-feature-name`). 🚀
-5. Create a new Pull Request. 📥
+1. 🍴 Fork the repository.
+2. 🚧 Create a new branch (`git checkout -b feature/your-feature-name`).
+3. 📝 Commit your changes (`git commit -am 'Add some feature'`).
+4. 🚀 Push to the branch (`git push origin feature/your-feature-name`).
+5. 📥 Create a new Pull Request.
 
 ## Contact 📞
 
